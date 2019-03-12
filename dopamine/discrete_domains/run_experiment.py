@@ -75,11 +75,11 @@ def create_agent(sess, environment, agent_name=None, summary_writer=None,
   if not debug_mode:
     summary_writer = None
   if agent_name == 'dqn':
-    return dqn_agent.DQNAgent(sess, num_actions=environment.action_space.n,
+    return dqn_agent.DQNAgent(sess, num_actions=4,
                               summary_writer=summary_writer)
   elif agent_name == 'rainbow':
     return rainbow_agent.RainbowAgent(
-        sess, num_actions=environment.action_space.n,
+        sess, num_actions=4,
         summary_writer=summary_writer)
   elif agent_name == 'implicit_quantile':
     return implicit_quantile_agent.ImplicitQuantileAgent(
